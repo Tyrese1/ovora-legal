@@ -16,8 +16,8 @@ reachable privacy policy URL and reviewers click it.
 Three boxes are outlined in pink on the published pages. Each is a placeholder that must be
 replaced:
 
-1. contact email — on both pages
-2. governing jurisdiction — on the Terms page
+1. ~~contact email~~ — done: hi@ovora.app, on both pages
+2. governing jurisdiction — on the Terms page (still outstanding)
 
 Edit the HTML directly (GitHub's web editor is fine); changes are live within a minute.
 
