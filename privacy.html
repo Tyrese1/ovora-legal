@@ -13,7 +13,7 @@
 <header class="site"><a class="home" href="./">Ovora</a></header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 25 September 2026</p>
+<p class="updated">Last updated: 28 September 2026</p>
 
 <p class="lede">Ovora is a fertility-awareness app built around the Billings Ovulation Method. It
 records intimate health information, so this page says plainly what is kept, where it goes, and how
@@ -23,9 +23,14 @@ to destroy it. Everything below describes what the app actually does.</p>
   <h3 style="margin-top:0">The short version</h3>
   <ul>
     <li>Your chart lives <strong>on your phone</strong>. There is no Ovora account, no email, no password.</li>
-    <li>If you connect a partner, a copy is mirrored through Google Firestore so their phone can
-      display it. <strong>It is encrypted on your device before it is sent.</strong> We hold
-      ciphertext; we cannot read it, and neither can Google.</li>
+    <li><strong>A copy of your chart is also kept on our server</strong> (Google Firestore), under a
+      random, anonymous ID. This happens for everyone, whether or not you connect a partner.
+      <strong>It is encrypted on your phone before it is sent</strong>, with a key that stays on your phone.</li>
+    <li>If you never pair with a partner, that key never leaves your phone, and nobody (us
+      included) can read the copy on our server.</li>
+    <li>If you pair with a partner, your key is shared through our server, locked with your pairing
+      code, so that their phone can read your chart. Read <a href="#pairing">Pairing</a> below for
+      what that means.</li>
     <li>We do not sell your data, share it with data brokers, or use it for advertising. There is no
       tracking or advertising SDK in the app.</li>
     <li><strong>Delete everything</strong> in Settings removes the copy on your phone, the encrypted
@@ -39,10 +44,29 @@ to destroy it. Everything below describes what the app actually does.</p>
 intercourse, temperature, LH test results, notes), the symptoms you log, your cycle history, and
 your settings — including your goal, charting method, reminder time and language.</p>
 
-<p><strong>On our server (Google Firestore), only if you connect a partner.</strong> The same chart
-and profile, <strong>encrypted end-to-end on your device before it is sent</strong>. The server
-stores an unreadable blob. The decryption key is held on your phone and shared only with the
-partner device you deliberately paired with, using a code you chose to give them.</p>
+<p><strong>On our server (Google Firestore), for every install.</strong> A copy of your daily
+observations and of your profile: your name, settings, goal, cycle details, and your symptom and
+mood diary. It is <strong>encrypted on your phone before it is sent</strong> (AES-256), so what
+reaches the server is unreadable without your key. Each day is stored as its own entry named by
+its date. That means the server can see <em>which</em> days you logged, and when entries were last
+updated, but not what you logged. The copy is kept so that a partner can be connected at any time
+and see your whole chart straight away, and so that Delete everything can remove it.</p>
+
+<p>This copy is <strong>not a backup</strong>. The key that reads it stays on your phone, so if you
+lose your phone or delete the app, the copy can't be used to restore your chart. Keep a backup
+file for that (see <a href="#backups">Backups</a>).</p>
+
+<p><strong>Your encryption key.</strong> It is created on your phone and kept there, protected by
+the phone's secure storage (the Android Keystore or the iOS Keychain). If you never create a
+pairing code, it never leaves your phone.</p>
+
+<p id="pairing"><strong>Pairing.</strong> When you create a pairing code, a copy of your key, locked
+with that code, is stored on our server in a pairing record. The record also holds the code
+itself, your anonymous ID, your partner's anonymous ID once they connect, and when each phone was
+last active. Our security rules let only the two paired phones read it, so other Ovora users
+can't get your key. However, because the code is kept alongside the locked key, the pairing record
+does not stop someone with administrative access to our database (us, or our hosting provider)
+from unlocking your chart. We do not do this.</p>
 
 <p><strong>An anonymous identifier.</strong> Ovora signs your install in to Firebase anonymously.
 This produces a random identifier that names your documents. It is not linked to your name, email
@@ -56,7 +80,8 @@ your device's advertising identifier, or your browsing activity.</p>
 <table>
   <thead><tr><th>What</th><th>Where it goes</th><th>Why</th></tr></thead>
   <tbody>
-    <tr><td>Your chart and profile, encrypted</td><td>Google Firestore</td><td>So a partner you paired with can see your cycle</td></tr>
+    <tr><td>Your chart and profile, encrypted</td><td>Google Firestore</td><td>So a partner can be connected at any time and see your chart (kept for every install)</td></tr>
+    <tr><td>Your encryption key, locked with your pairing code (only if you create a pairing code)</td><td>Google Firestore</td><td>So your partner's phone can read your chart</td></tr>
     <tr><td>Anonymous identifier</td><td>Google Firebase Authentication</td><td>Names your documents so the right phone reads them</td></tr>
     <tr><td>Subscription status</td><td>RevenueCat</td><td>Confirms whether Ovora Plus is active</td></tr>
     <tr><td>Questions you type to the Coach, with a one-line summary of where you are in your cycle</td><td>Google Gemini API</td><td>To generate an answer</td></tr>
@@ -79,7 +104,7 @@ link is removed on both devices and the partner's mirrored copy stops updating.<
 
 <p>Your partner never sees your notes to yourself, and cannot log or change anything on your chart.</p>
 
-<h2>Backups</h2>
+<h2 id="backups">Backups</h2>
 
 <p>Ovora can write a backup file, either when you ask or automatically to a folder you choose. That
 file is <strong>yours</strong>: it is written to storage you selected, and Ovora never uploads it
@@ -125,9 +150,9 @@ us at the address below.</p>
 
 <h2>How long anything is kept</h2>
 
-<p>Data on your phone stays until you delete it or remove the app. The encrypted server mirror stays
-until you delete everything, or until you disconnect and delete your data. We do not keep backups of
-your chart on our side.</p>
+<p>Data on your phone stays until you delete it or remove the app. The encrypted copy on our server
+stays until you use Delete everything. If you remove the app without doing that, the copy stays on
+the server until you ask us to delete it. We do not keep backups of your chart on our side.</p>
 
 <h2>Children</h2>
 
