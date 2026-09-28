@@ -28,9 +28,9 @@ to destroy it. Everything below describes what the app actually does.</p>
       <strong>It is encrypted on your phone before it is sent</strong>, with a key that stays on your phone.</li>
     <li>If you never pair with a partner, that key never leaves your phone, and nobody (us
       included) can read the copy on our server.</li>
-    <li>If you pair with a partner, your key is shared through our server, locked with your pairing
-      code, so that their phone can read your chart. Read <a href="#pairing">Pairing</a> below for
-      what that means.</li>
+    <li>If you pair with a partner, your key passes through our server, locked with your pairing
+      code, and is deleted from it as soon as your partner's phone has it. Read
+      <a href="#pairing">Pairing</a> below.</li>
     <li>We do not sell your data, share it with data brokers, or use it for advertising. There is no
       tracking or advertising SDK in the app.</li>
     <li><strong>Delete everything</strong> in Settings removes the copy on your phone, the encrypted
@@ -60,13 +60,20 @@ file for that (see <a href="#backups">Backups</a>).</p>
 the phone's secure storage (the Android Keystore or the iOS Keychain). If you never create a
 pairing code, it never leaves your phone.</p>
 
-<p id="pairing"><strong>Pairing.</strong> When you create a pairing code, a copy of your key, locked
-with that code, is stored on our server in a pairing record. The record also holds the code
-itself, your anonymous ID, your partner's anonymous ID once they connect, and when each phone was
-last active. Our security rules let only the two paired phones read it, so other Ovora users
-can't get your key. However, because the code is kept alongside the locked key, the pairing record
-does not stop someone with administrative access to our database (us, or our hosting provider)
-from unlocking your chart. We do not do this.</p>
+<p id="pairing"><strong>Pairing.</strong> Your partner's phone needs your key to read your chart.
+When you create a pairing code, a copy of your key, locked with that code, is placed in a pairing
+record on our server, with your anonymous ID, your partner's anonymous ID once they connect, and
+when each phone was last active. Our security rules let only the two paired phones read it. As soon
+as each phone holds the other's key, Ovora deletes the locked keys from the record. From then on
+nothing on our server can unlock your chart, even with the code.</p>
+
+<p>While a pairing is being set up, the locked key is on our server. The record is filed under a
+scrambled form of the code, so the code never reaches us, and working back from the record to the
+code is not feasible. Versions of Ovora before 1.0.1 (6) filed the record under the code itself and
+kept the locked keys for as long as the pairing lasted, which would have let someone with
+administrative access to our database (us, or our hosting provider) unlock a paired chart. We have
+never done this. Those keys are deleted the first time the phone that created the pairing code runs
+Ovora 1.0.1 (6) or later.</p>
 
 <p><strong>An anonymous identifier.</strong> Ovora signs your install in to Firebase anonymously.
 This produces a random identifier that names your documents. It is not linked to your name, email
