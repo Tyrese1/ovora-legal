@@ -91,14 +91,16 @@ your device's advertising identifier, or your browsing activity.</p>
     <tr><td>Your encryption key, locked with your pairing code (only if you create a pairing code)</td><td>Google Firestore</td><td>So your partner's phone can read your chart</td></tr>
     <tr><td>Anonymous identifier</td><td>Google Firebase Authentication</td><td>Names your documents so the right phone reads them</td></tr>
     <tr><td>Subscription status</td><td>RevenueCat</td><td>Confirms whether Ovora Plus is active</td></tr>
-    <tr><td>Questions you type to the Coach, with a one-line summary of where you are in your cycle</td><td>Google Gemini API</td><td>To generate an answer</td></tr>
+    <tr><td>Questions you type to the Coach, with an anonymised summary of your chart (cycle-day numbers, cycle and period lengths, this cycle's mucus pattern, the feelings you logged — never your name, calendar dates or notes)</td><td>Google Gemini API</td><td>To generate an answer about <em>your</em> cycle</td></tr>
   </tbody>
 </table>
 
 <p>Questions you send to the Coach are transmitted <strong>without your identifier attached</strong>,
-together with a one-line summary of your current cycle phase and goal (for example “post-Peak phase,
-avoiding pregnancy”). Your logged days themselves are never sent. Nothing is stored by Ovora and
-nothing is connected back to your chart.</p>
+together with an anonymised summary of your chart, so the answer can be about your own cycle rather than a
+textbook one: which cycle day it is, how long your periods and cycles have run, this cycle's mucus pattern,
+where your Peaks have fallen, the feelings you logged (as "N days ago"), and anything the log has flagged as
+worth a doctor. It never includes your name, your partner's name, calendar dates, or the notes you type.
+Nothing is stored by Ovora and nothing is connected back to your chart.</p>
 
 <p>Nothing leaves your device for any purpose other than making a feature work. There is no
 analytics, no advertising, and no profiling.</p>
