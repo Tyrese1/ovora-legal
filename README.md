@@ -13,11 +13,11 @@ reachable privacy policy URL and reviewers click it.
 
 ## Before submitting to the App Store
 
-Three boxes are outlined in pink on the published pages. Each is a placeholder that must be
-replaced:
+The published pages once carried pink placeholder boxes. Both are now filled in:
 
 1. ~~contact email~~ — done: hi@ovora.app, on both pages
-2. governing jurisdiction — on the Terms page (still outstanding)
+2. ~~governing jurisdiction~~ — done: England and Wales, with consumers keeping their home-country
+   protections and courts
 
 Edit the HTML directly (GitHub's web editor is fine); changes are live within a minute.
 
