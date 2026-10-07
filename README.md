@@ -1,13 +1,17 @@
 # Ovora — legal pages
 
-The public Privacy Policy and Terms of Use for the Ovora app, served by GitHub Pages.
+The public Privacy Policy and Terms of Use for the Ovora app.
+
+**Home: https://ovora-legal.goldfiverr91.workers.dev** — the app, App Store Connect and Play all link
+here (`/privacy.html`, `/terms.html`). The GitHub Pages copy is superseded; some carriers block it.
 
 **This repo is public on purpose and contains no app source.** Ovora itself lives in a private
 repository; only these two documents are here, because Apple and Google both require a publicly
 reachable privacy policy URL and reviewers click it.
 
 - `privacy.html` — Privacy Policy
-- `terms.html` — Terms of Use
+- `terms.html` — Terms of Use, including section 9, the Apple App Store terms Apple requires of a
+  custom EULA
 - `index.html` — links to both
 - `.nojekyll` — serve the files as-is, no Jekyll build
 
