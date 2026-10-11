@@ -14,7 +14,7 @@
 <header class="site"><a class="home" href="./">Ovora</a></header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 28 September 2026</p>
+<p class="updated">Last updated: 11 October 2026</p>
 
 <p class="lede">Ovora is a fertility-awareness app built around the Billings Ovulation Method. It
 records intimate health information, so this page says plainly what is kept, where it goes, and how
@@ -33,7 +33,7 @@ to destroy it. Everything below describes what the app actually does.</p>
       code, so that their phone can read your chart. Read <a href="#pairing">Pairing</a> below for
       what that means.</li>
     <li>We do not sell your data, share it with data brokers, or use it for advertising. There is no
-      tracking or advertising SDK in the app.</li>
+      advertising or cross-app tracking in the app. Optional diagnostics are described below.</li>
     <li><strong>Delete everything</strong> in Settings removes the copy on your phone, the encrypted
       copy on the server, and the anonymous identifier it was filed under.</li>
   </ul>
@@ -85,6 +85,8 @@ your device's advertising identifier, or your browsing activity.</p>
     <tr><td>Your encryption key, locked with your pairing code (only if you create a pairing code)</td><td>Google Firestore</td><td>So your partner's phone can read your chart</td></tr>
     <tr><td>Anonymous identifier</td><td>Google Firebase Authentication</td><td>Names your documents so the right phone reads them</td></tr>
     <tr><td>Subscription status</td><td>RevenueCat</td><td>Confirms whether Ovora Plus is active</td></tr>
+    <tr><td>Optional crash diagnostics, app milestones and installation identifiers</td><td>Google Firebase Crashlytics and Google Analytics</td><td>Find crashes and improve onboarding and subscription flows, only if you allow diagnostics</td></tr>
+    <tr><td>App verification and configuration requests</td><td>Google Firebase App Check and Remote Config; Apple App Attest or Google Play Integrity</td><td>Protect the service and retrieve supported versions, app settings and feature availability</td></tr>
     <tr><td>Questions you type to the Coach, with a one-line summary of where you are in your cycle</td><td>Google Gemini API</td><td>To generate an answer</td></tr>
   </tbody>
 </table>
@@ -94,8 +96,24 @@ together with a one-line summary of your current cycle phase and goal (for examp
 avoiding pregnancy”). Your logged days themselves are never sent. Nothing is stored by Ovora and
 nothing is connected back to your chart.</p>
 
-<p>Nothing leaves your device for any purpose other than making a feature work. There is no
-analytics, no advertising, and no profiling.</p>
+<h2>Optional diagnostics and analytics</h2>
+<p>New versions of Ovora ask whether you want to share diagnostics. Collection is off until you
+allow it. You can change your choice in <strong>Settings → Privacy &amp; data → Help improve
+Ovora</strong>. This choice does not affect your chart or subscription.</p>
+<p>If allowed, Firebase receives technical crash reports (including stack traces, app version,
+device and operating-system information), installation identifiers, and basic interaction events:
+onboarding, first saved log, paywall viewing, and an active trial or paid plan observed by the app.
+These events do not include cycle days, symptoms, observations, your goal, names, notes, or chat
+messages. Ovora does not attach its Firebase Authentication identifier to analytics or crash reports.
+Analytics is not used for advertising or cross-app tracking.</p>
+<p>Turning diagnostics off stops new collection, resets the local analytics identifier and deletes
+unsent crash reports. It does not erase reports already received by Firebase; these remain subject
+to the provider's retention policies. Likewise, Delete everything removes your chart/account data,
+not previously submitted aggregate analytics.</p>
+<p>Remote Config retrieves public app settings, such as supported builds and feature availability.
+It does not change your paid entitlement or the price charged by Apple or Google. App Check uses
+platform attestation to verify that requests come from a registered app; it is separate from
+optional analytics and remains active to protect the service.</p>
 
 <h2>Connecting a partner</h2>
 
@@ -140,7 +158,8 @@ us at the address below.</p>
 
 <ul>
   <li><strong>Google Firebase / Firestore</strong> — stores the encrypted mirror and issues the
-    anonymous identifier. <a href="https://policies.google.com/privacy">Google's privacy policy</a></li>
+    anonymous identifier; App Check verifies app requests, Remote Config provides public settings,
+    and optional Crashlytics/Analytics provide diagnostics. <a href="https://policies.google.com/privacy">Google's privacy policy</a></li>
   <li><strong>RevenueCat</strong> — manages subscriptions.
     <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a></li>
   <li><strong>Google Gemini API</strong> — answers Coach questions.
