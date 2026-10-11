@@ -2,13 +2,14 @@
 
 The public legal and support pages for Ovora. The canonical website is
 https://ovora-legal.goldfiverr91.workers.dev/ (Cloudflare Workers).
+The GitHub Pages copy is superseded; some carriers block it.
 
 **This repo is public on purpose and contains no app source.** Ovora itself lives in a private
 repository; only public legal/support information is here, because Apple and Google require a publicly
 reachable privacy policy URL and reviewers click it.
 
 - `privacy.html` — Privacy Policy
-- `terms.html` — Terms of Use
+- `terms.html` — Terms of Use, including section 9, the Apple App Store terms Apple requires of a custom EULA
 - `support.html` — technical help and public support contact
 - `index.html` — legal and support home
 - `.nojekyll` — serve the files as-is, no Jekyll build
