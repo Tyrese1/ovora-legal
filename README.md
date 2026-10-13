@@ -1,8 +1,8 @@
 # Ovora — legal pages
 
 The public legal and support pages for Ovora. The canonical website is
-https://ovora-legal.goldfiverr91.workers.dev/ (Cloudflare Workers).
-The GitHub Pages copy is superseded; some carriers block it.
+https://ovora.help/ (served by Vercel).
+The previous hosting addresses are superseded.
 
 **This repo is public on purpose and contains no app source.** Ovora itself lives in a private
 repository; only public legal/support information is here, because Apple and Google require a publicly
@@ -13,28 +13,31 @@ reachable privacy policy URL and reviewers click it.
 - `support.html` — technical help and public support contact
 - `index.html` — legal and support home
 - `.nojekyll` — serve the files as-is, no Jekyll build
+- `favicon.png` and `apple-touch-icon.png` — existing Ovora rose mark, sized for browsers and saved home-screen links
 
 ## Before submitting to the App Store
 
 The published pages once carried pink placeholder boxes. Both are now filled in:
 
-1. ~~contact email~~ — done: hi@ovora.app, on both pages
+1. ~~contact email~~ — done: hi@ovora.help, on all pages
 2. ~~governing jurisdiction~~ — done: England and Wales, with consumers keeping their home-country
    protections and courts
 
 ## Store and app URLs
 
-- Legal home: https://ovora-legal.goldfiverr91.workers.dev/
-- Privacy: https://ovora-legal.goldfiverr91.workers.dev/privacy.html
-- Terms: https://ovora-legal.goldfiverr91.workers.dev/terms.html
-- Support: https://ovora-legal.goldfiverr91.workers.dev/support.html
+- Legal home: https://ovora.help/
+- Privacy: https://ovora.help/privacy.html
+- Terms: https://ovora.help/terms.html
+- Support: https://ovora.help/support.html
+- Contact: hi@ovora.help
 
 Use these addresses in both Android and iOS and their store listings. Relative navigation links
-keep previews portable; canonical tags identify the production Cloudflare URL.
+keep previews portable; canonical tags identify the production domain.
 
-Edit the HTML directly. This repository has no Cloudflare deployment workflow/configuration;
-publishing a Git commit does not confirm the Workers site has deployed. Deploy through the
-configured Cloudflare integration, then verify all four URLs before changing store metadata.
+Edit the HTML directly. Publishing a Git commit alone does not confirm the production site has
+deployed. Verify the hosted HTML, contact links and browser icons after deployment. The app uses
+the `.html` addresses: extensionless `/privacy` and `/terms` returned 404 when checked on
+13 October 2026.
 
 ## Keeping it honest
 
