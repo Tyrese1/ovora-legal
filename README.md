@@ -39,6 +39,10 @@ deployed. Verify the hosted HTML, contact links and browser icons after deployme
 the `.html` addresses: extensionless `/privacy` and `/terms` returned 404 when checked on
 13 October 2026.
 
+The public support address is `hi@ovora.help`. Receiving email must be configured separately with
+the chosen mail provider; the domain had no MX records when checked on 13 October 2026. Updating
+these pages does not create an inbox or configure mail forwarding.
+
 ## Keeping it honest
 
 The Privacy Policy was written from Ovora's actual behaviour, not from a template — the anonymous
