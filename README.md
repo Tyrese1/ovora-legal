@@ -39,9 +39,36 @@ deployed. Verify the hosted HTML, contact links and browser icons after deployme
 the `.html` addresses: extensionless `/privacy` and `/terms` returned 404 when checked on
 13 October 2026.
 
-The public support address is `hi@ovora.help`. Receiving email must be configured separately with
-the chosen mail provider; the domain had no MX records when checked on 13 October 2026. Updating
-these pages does not create an inbox or configure mail forwarding.
+## Support email
+
+The public support address is `hi@ovora.help`. Its MX record routes incoming mail to Resend in
+Ireland. Read incoming messages in the **Tabscan Resend account → Emails → Receiving**. Domain
+verification, sending authentication and receiving are configured independently from web hosting.
+
+`POST /api/mail-notify` accepts signed Resend `email.received` events for `@ovora.help` and sends
+the configured owner a fixed notification with a private Resend dashboard link. It ignores other
+projects' mail. It does not fetch, copy or act on the incoming subject, body or attachments.
+Signature/timestamp verification uses the official Resend SDK; retries use an email-specific
+idempotency key (Resend's deduplication window is 24 hours). Sending failures return 503 so the
+provider can retry. The existing static pages retain their URLs and layout.
+
+Set these **production-only Secret** environment variables in the Vercel `ovora-legal` project:
+
+- `OVORA_MAIL_RESEND_API_KEY`: sending-only key restricted to `ovora.help`.
+- `OVORA_MAIL_WEBHOOK_SECRET`: signing secret for this webhook, not the existing Tabscan webhook.
+- `OVORA_MAIL_NOTIFY_TO`: the owner's notification address. Keep its value out of this public repo.
+
+Register `https://ovora.help/api/mail-notify` in Resend for **only** `email.received`, and redeploy
+after changing Vercel variables. Never place credentials in HTML, source control or notification URLs.
+Rotate them independently of other projects. Run `pnpm install --frozen-lockfile` and `pnpm test`
+before deploying changes to the handler.
+
+The account stays on Resend Free with paid overages disabled. Incoming mail and outgoing alerts
+both use its shared allowance (100 emails/day and 3,000/month when configured on 16 October 2026).
+One received message plus its alert uses two emails; other projects use that same allowance. Above
+the free limits, delivery/alerts can stop or be delayed; this setup does not enable an upgrade.
+There is no additional Vercel plan or email subscription. A mail provider is still required even
+though this repository hosts the public support pages.
 
 ## Keeping it honest
 
