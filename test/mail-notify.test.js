@@ -63,7 +63,7 @@ test('sends only a private dashboard link and fixed copy to the configured owner
   assert.equal(calls.length, 1);
   assert.equal(calls[0].url, 'https://api.resend.com/emails');
   assert.deepEqual(calls[0].message.to, [env.OVORA_MAIL_NOTIFY_TO]);
-  assert.match(calls[0].message.text, new RegExp(`https://resend.com/emails/receiving/${emailId}`));
+  assert.match(calls[0].message.text, new RegExp(`https://resend.com/emails/${emailId}`));
   assert.match(calls[0].message.html, /lang="en"/);
   assert.ok(!JSON.stringify(calls[0].message).includes(event.data.subject));
   assert.ok(!JSON.stringify(calls[0].message).includes(event.data.from));

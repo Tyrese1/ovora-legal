@@ -39,7 +39,7 @@ export async function handleMailNotification(request, env = process.env) {
   if (!forOvora || typeof data.email_id !== 'string' || !UUID.test(data.email_id)) return respond(204);
 
   // A dashboard link requires the owner's Resend login. Never create public email-share links.
-  const link = `https://resend.com/emails/receiving/${data.email_id}`;
+  const link = `https://resend.com/emails/${data.email_id}`;
   try {
     const result = await resend.emails.send({
       from: 'Ovora notifications <hi@ovora.help>',
