@@ -16,7 +16,7 @@
 <header class="site"><a class="home" href="./">Ovora</a></header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 16 October 2026</p>
+<p class="updated">Last updated: 17 October 2026</p>
 
 <p class="lede">Ovora is a fertility-awareness app built around the Billings Ovulation Method. It
 records intimate health information, so this page says plainly what is kept, where it goes, and how
@@ -87,7 +87,7 @@ your device's advertising identifier, or your browsing activity.</p>
     <tr><td>Your encryption key, locked with your pairing code (only if you create a pairing code)</td><td>Google Firestore</td><td>So your partner's phone can read your chart</td></tr>
     <tr><td>Anonymous identifier</td><td>Google Firebase Authentication</td><td>Names your documents so the right phone reads them</td></tr>
     <tr><td>Subscription status</td><td>RevenueCat</td><td>Confirms whether Ovora Plus is active</td></tr>
-    <tr><td>Optional crash diagnostics, app milestones and installation identifiers</td><td>Google Firebase Crashlytics and Google Analytics</td><td>Find crashes and improve onboarding and subscription flows, only if you allow diagnostics</td></tr>
+    <tr><td>Optional crash diagnostics, app milestones and installation identifiers</td><td>Google Firebase Crashlytics and Google Analytics; PostHog (app milestones only)</td><td>Find crashes and improve onboarding and subscription flows, only if you allow diagnostics</td></tr>
     <tr><td>App verification and configuration requests</td><td>Google Firebase App Check and Remote Config; Apple App Attest or Google Play Integrity</td><td>Protect the service and retrieve supported versions, app settings and feature availability</td></tr>
     <tr><td>Questions you type to the Coach, with a one-line summary of where you are in your cycle</td><td>Google Gemini API</td><td>To generate an answer</td></tr>
   </tbody>
@@ -108,8 +108,14 @@ onboarding, first saved log, paywall viewing, and an active trial or paid plan o
 These events do not include cycle days, symptoms, observations, your goal, names, notes, or chat
 messages. Ovora does not attach its Firebase Authentication identifier to analytics or crash reports.
 Analytics is not used for advertising or cross-app tracking.</p>
+<p>The same milestones, and an "app opened" event sent at most once a day, also go to
+<strong>PostHog</strong> (US cloud) so we can see how many people keep using Ovora. Each event
+carries only its name, the platform, the operating-system and app versions, and whether it came
+from a test build, under a random installation identifier that is deleted when you turn
+diagnostics off. PostHog creates no person profile for these events and is told not to look up
+your location from them.</p>
 <p>Turning diagnostics off stops new collection, resets the local analytics identifier and deletes
-unsent crash reports. It does not erase reports already received by Firebase; these remain subject
+unsent crash reports. It does not erase reports already received by Firebase or PostHog; these remain subject
 to the provider's retention policies. Likewise, Delete everything removes your chart/account data,
 not previously submitted aggregate analytics.</p>
 <p>Remote Config retrieves public app settings, such as supported builds and feature availability.
@@ -152,7 +158,7 @@ link is removed on both devices and the partner's mirrored copy stops updating.<
 dating revisions, pregnancy history, optional outcome, and private check-ins (symptoms, mood,
 energy and notes) on this phone. These records are encrypted with a separate device-held key
 that is <strong>not shared with a partner</strong>. The private diary and outcome are not put in
-the shared chart mirror, sent to Coach, or included in Analytics or Crashlytics events.</p>
+the shared chart mirror, sent to Coach, or included in Analytics, Crashlytics or PostHog events.</p>
 <p>A generic “cycle guidance paused” setting is included in your encrypted shared profile so a
 linked partner does not continue receiving cycle predictions. Sharing pregnancy weeks and an
 estimated due date is a separate, optional switch for the current partner link. Turning it off
@@ -245,6 +251,8 @@ described above.</p>
   <li><strong>Google Firebase / Firestore</strong> — stores the encrypted mirror and issues the
     anonymous identifier; App Check verifies app requests, Remote Config provides public settings,
     and optional Crashlytics/Analytics provide diagnostics. <a href="https://policies.google.com/privacy">Google's privacy policy</a></li>
+  <li><strong>PostHog</strong> — receives optional app milestones, only if you allow diagnostics.
+    <a href="https://posthog.com/privacy">PostHog's privacy policy</a></li>
   <li><strong>RevenueCat</strong> — manages subscriptions.
     <a href="https://www.revenuecat.com/privacy">RevenueCat's privacy policy</a></li>
   <li><strong>Google Gemini API</strong> — answers Coach questions.
