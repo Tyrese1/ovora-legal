@@ -1,46 +1,310 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ovora — Legal</title>
-<meta name="description" content="Privacy Policy and Terms of Use for Ovora, the Billings Ovulation Method charting app.">
+<title>Ovora: Period &amp; Ovulation</title>
+<meta name="description" content="Ovora is a period and ovulation tracker built on the Billings Ovulation Method. One observation a day shows you where you are in your cycle. Private by design, with an optional partner view and pregnancy mode.">
 <link rel="canonical" href="https://ovora.help/">
+<meta name="theme-color" content="#F1E7ED" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#151114" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ovora">
+<meta property="og:title" content="Ovora: Period &amp; Ovulation">
+<meta property="og:description" content="Your cycle, clearly understood. Billings charting, one observation a day.">
+<meta property="og:url" content="https://ovora.help/">
+<meta property="og:image" content="https://ovora.help/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="stylesheet" href="style.css">
+<link rel="preload" as="image" href="assets/today-720.webp" imagesrcset="assets/today-720.webp 720w, assets/today-1080.webp 1080w" imagesizes="(min-width: 900px) 340px, 68vw">
+<link rel="stylesheet" href="home.css">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Ovora: Period & Ovulation","operatingSystem":"Android","applicationCategory":"HealthApplication","url":"https://ovora.help/","installUrl":"https://play.google.com/store/apps/details?id=com.delightfulapps.ovora","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Delightful Apps","email":"hi@ovora.help"}}
+</script>
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#main">Skip to content</a>
+<div class="nav-sentinel" aria-hidden="true"></div>
 
-<header class="site"><a class="home" href="./">Ovora</a></header>
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="nav__brand" href="./" aria-label="Ovora home">
+      <img src="assets/mark-256.png" alt="" width="28" height="28">
+      <span>Ovora</span>
+    </a>
+    <nav class="nav__links" aria-label="Page sections">
+      <a href="#inside">What's inside</a>
+      <a href="#ovo">Ovo</a>
+      <a href="#pregnancy">Pregnancy</a>
+      <a href="#partner">Partner</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#plus">Plus</a>
+    </nav>
+    <a class="nav__cta" href="#download">Get the app</a>
+  </div>
+</header>
 
-<h1>Ovora</h1>
-<p class="lede">Ovora is a fertility-awareness app built around the Billings Ovulation Method. Your
-chart lives on your phone, and the copy kept on our server is encrypted on your phone before it is
-sent. Read how that works, or get help with Ovora below.</p>
+<main id="main">
 
-<div class="card">
-  <h3 style="margin-top:0"><a href="privacy.html">Privacy Policy</a></h3>
-  <p style="margin-bottom:0">What is stored, what leaves your device and why, who else is involved,
-  and how to erase all of it — including the copy on the server. Includes how Ovora uses Apple features
-  on iPhone and iPad.</p>
-</div>
+<!-- ───────── Hero ───────── -->
+<section class="hero" aria-labelledby="hero-h">
+  <div class="hero__copy" data-hero-copy>
+    <h1 id="hero-h">Your cycle, clearly understood.</h1>
+    <p class="hero__sub">One observation a day. Ovora reads it with the Billings Ovulation Method and shows where you are in your cycle.</p>
+    <div class="hero__cta">
+      <a class="btn btn--store" href="https://play.google.com/store/apps/details?id=com.delightfulapps.ovora">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3.6 2.3 13 12l-9.4 9.7a1.6 1.6 0 0 1-.6-1.3V3.6c0-.5.2-1 .6-1.3Zm11 8.1L5.9 1.6l10.4 6-1.7 2.8Zm3.3 3.6-1.9-2 1.9-2 3.3 1.9c.6.4.6 1.1 0 1.5l-3.3 1.9v-1.3Zm-3.3-.4 1.7 2.8-10.4 6L14.6 13.6Z"/></svg>
+        <span><small>Get it on</small>Google Play</span>
+      </a>
+      <span class="btn btn--soon" aria-label="Coming soon to the App Store">
+        <svg aria-hidden="true" viewBox="0 0 14 44" width="13" height="26"><path fill="currentColor" d="M13.0729 17.6825c.0392 3.4062 2.9006 4.5394 2.9006 4.5394s-1.9468 5.5534-4.5759 5.5534c-1.2046 0-2.1407-.8112-3.4123-.8112-1.2953 0-2.5273.8355-3.4115.8355C2.0882 27.7596 0 22.4097 0 17.5875 0 12.8477 2.8497 10.3672 5.5508 10.3672c1.2421 0 2.2758.8125 3.0621.8125.7504 0 1.9232-.8605 3.4125-.8605 1.3286 0 3.2793.8091 4.0475 2.9633zm-2.0842-5.3264c.9604-1.2145 1.6029-2.9112 1.4295-4.6082-1.5116.0845-3.3272 1.0604-4.3105 2.2758-.9487 1.1108-1.7516 2.8381-1.5389 4.5001 1.6678.1286 3.3797-.9014 4.4199-2.1677z"/></svg>
+        <span><small>Coming soon to the</small>App Store</span>
+      </span>
+    </div>
+  </div>
+  <div class="hero__art" data-parallax="-0.07">
+    <div class="hero__stage">
+      <figure class="device device--back">
+        <img src="assets/dark-720.webp" width="720" height="1564" alt="Ovora's Today screen in dark mode: the cycle ring with cycle day 14 at its centre.">
+      </figure>
+      <figure class="device device--front">
+        <img src="assets/today-720.webp" srcset="assets/today-720.webp 720w, assets/today-1080.webp 1080w" sizes="(min-width: 900px) 340px, 68vw" width="720" height="1564" fetchpriority="high" alt="Ovora's Today screen: the week strip, the cycle ring with living roses and cycle day 14 at its centre, the Edit today's log button and the Catch-up card.">
+      </figure>
+    </div>
+  </div>
+</section>
 
-<div class="card">
-  <h3 style="margin-top:0"><a href="terms.html">Terms of Use</a></h3>
-  <p style="margin-bottom:0">The terms that apply when you use the app, the subscription terms for
-  Ovora Plus, the medical disclaimer, and the Apple App Store terms for iPhone and iPad.</p>
-</div>
+<!-- ───────── What's inside (bento) ───────── -->
+<section class="inside" id="inside" aria-labelledby="inside-h">
+  <div class="wrap">
+    <h2 id="inside-h" class="reveal">What's inside</h2>
+    <div class="bento">
+      <article class="cell cell--ring reveal">
+        <div class="cell__text"><h3>Your cycle in one ring.</h3><p>Today shows your cycle day at the centre, with six living roses in the stage you charted that day.</p></div>
+        <div class="cell__shot"><div class="cell__screen"><img src="assets/today-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="The Today ring, cycle day 14, with roses at their stages around it."></div></div>
+      </article>
+      <article class="cell cell--log reveal">
+        <div class="cell__text"><h3>One minute a day.</h3><p>Note what you felt and saw. Ovora classifies the day and finds your Peak.</p></div>
+        <div class="cell__shot"><div class="cell__screen"><img src="assets/log-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="The day log: sensation and mucus appearance tiles."></div></div>
+      </article>
+      <article class="cell cell--cal reveal">
+        <div class="cell__text"><h3>A month of rings.</h3><p>Every charted day becomes a ring in its stage colour, with period estimates dashed.</p></div>
+        <div class="cell__shot"><div class="cell__screen"><img src="assets/calendar-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="The calendar for October 2026, each charted day drawn as a ring."></div></div>
+      </article>
+      <article class="cell cell--ovo reveal">
+        <div class="cell__text"><h3>Ask Ovo.</h3><p>A private AI coach that answers from an anonymised summary of your chart.</p></div>
+        <div class="cell__shot"><div class="cell__screen"><img src="assets/coach-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="Ovo answering the question What is the Peak day?"></div></div>
+      </article>
+      <article class="cell cell--pair reveal">
+        <div class="cell__text"><h3>For both of you.</h3><p>Invite your partner with a private code. He sees what matters, in his own words, and can never edit your chart.</p></div>
+        <img class="cell__art" src="assets/art-pairing.webp" loading="lazy" decoding="async" width="512" height="512" alt="">
+      </article>
+      <article class="cell cell--preg reveal">
+        <div class="cell__text"><h3>Pregnancy mode.</h3><p>Your week and day, your baby's size, and what's developing, with reads based on NHS guidance.</p></div>
+        <div class="cell__shot"><div class="cell__screen"><img src="assets/pregnancy-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Pregnancy mode at 20 weeks, with the estimated due date."></div></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<div class="card">
-  <h3 style="margin-top:0"><a href="support.html">Support</a></h3>
-  <p style="margin-bottom:0">Help with subscriptions, backups, partner connection and contacting us.
-  Please do not send intimate health information when asking for technical help.</p>
-</div>
+<!-- ───────── Chapter: Today ───────── -->
+<section class="chapter chapter--today" aria-labelledby="today-h">
+  <div class="wrap wrap--text">
+    <h2 id="today-h" class="reveal">Read your body, not a calendar.</h2>
+    <p class="lead reveal">Instead of guessing from dates, Ovora reads your body's own fertility signs. Irregular cycles, breastfeeding and perimenopause don't break it.</p>
+    <p class="lead reveal">Guidance follows your goal: trying to conceive, natural family planning, just tracking your period, or perimenopause.</p>
+  </div>
+  <figure class="device device--xl reveal" data-parallax="-0.05">
+    <img src="assets/today-1080.webp" loading="lazy" decoding="async" width="1080" height="2347" alt="The Today screen at full size: cycle day 14 in the ring, a typical cycle of about 28 days, and today's Catch-up.">
+  </figure>
+</section>
 
-<footer class="site">Ovora — Delightful Apps · <a href="mailto:hi@ovora.help">Contact us</a></footer>
+<!-- ───────── Chapter: Patterns (gallery) ───────── -->
+<section class="chapter chapter--patterns" aria-labelledby="patterns-h">
+  <div class="wrap wrap--text">
+    <h2 id="patterns-h" class="reveal">Learn your patterns.</h2>
+    <p class="lead reveal">Cycle lengths, Peak history and mood across the cycle. Period forecasts learn from your last cycles, and alerts count down to what's next.</p>
+  </div>
+  <div class="gallery reveal" role="list" aria-label="Screens of the chart, calendar and insights">
+    <figure class="device" role="listitem">
+      <img src="assets/log-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="The day log, one card per question.">
+      <figcaption>One card per question.</figcaption>
+    </figure>
+    <figure class="device" role="listitem">
+      <img src="assets/chart-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="The August chart in the stamp method, with each day's mark.">
+      <figcaption>Coloured stamps or the traditional Billings signs.</figcaption>
+    </figure>
+    <figure class="device" role="listitem">
+      <img src="assets/calendar-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="The calendar of rings for October.">
+      <figcaption>Tap the month for the whole year.</figcaption>
+    </figure>
+    <figure class="device" role="listitem">
+      <img src="assets/insights-learn-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Insights: how Ovora learns you, with cycle lengths and Peak days from the last three cycles.">
+      <figcaption>How Ovora learns you, cycle by cycle.</figcaption>
+    </figure>
+  </div>
+  <p class="note wrap wrap--text reveal">Forecasts are estimates, not confirmation of ovulation or pregnancy.</p>
+</section>
 
-</div>
+<!-- ───────── Chapter: Ovo (dark) ───────── -->
+<section class="chapter chapter--ovo" id="ovo" aria-labelledby="ovo-h" data-theme-section="dark">
+  <div class="wrap split">
+    <div class="split__copy">
+      <h2 id="ovo-h" class="reveal">Meet Ovo.</h2>
+      <p class="lead reveal">A private coach for the questions you'd rather not ask anyone else. Ovo reads an anonymised summary of your chart, never your name, dates or notes.</p>
+      <p class="note reveal">Responses are educational, not medical advice.</p>
+    </div>
+    <figure class="device device--lg reveal" data-parallax="-0.05">
+      <img src="assets/coach-chat-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Ovo explaining today's reading on cycle day 14 and why the Peak is likely near, with follow-up questions below.">
+    </figure>
+  </div>
+</section>
+
+<!-- ───────── Chapter: Pregnancy ───────── -->
+<section class="chapter chapter--preg" id="pregnancy" aria-labelledby="preg-h" data-theme-section="light">
+  <div class="wrap panel">
+    <div class="panel__copy">
+      <h2 id="preg-h" class="reveal">When you're pregnant, Ovora changes with you.</h2>
+      <p class="lead reveal">Your week and day, your baby's size from poppy seed to pumpkin, what's developing, and check-in trends, with reads based on NHS guidance.</p>
+      <p class="lead reveal">The estimated due date sits on Today, every week has a short deck of cards, and your cycle history is kept for afterwards.</p>
+    </div>
+    <div class="panel__art">
+      <figure class="device device--p2 reveal" data-parallax="-0.04">
+        <img src="assets/size-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Your week: week 20, about the size of a banana, with approximate length and typical weight.">
+      </figure>
+      <figure class="device device--p1 reveal" data-parallax="-0.04">
+        <img src="assets/pregnancy-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Pregnancy mode on Today: 20 weeks and 0 days, trimester 2, estimated due date 13 March 2027, and the Log today button.">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── Chapter: Partner ───────── -->
+<section class="chapter chapter--partner" id="partner" aria-labelledby="partner-h">
+  <div class="wrap split split--rev">
+    <figure class="device device--lg reveal" data-parallax="-0.05">
+      <img src="assets/partner-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="Connect your partner: a sharing code that stops working after 24 hours, with Copy, Share and Generate new code buttons.">
+    </figure>
+    <div class="split__copy">
+      <h2 id="partner-h" class="reveal">Connect with care.</h2>
+      <p class="lead reveal">Invite your partner with a private code. He sees what matters, in wording written for him, gets his own alerts, and can never edit your chart.</p>
+      <p class="note reveal">Pairing is optional, and you can disconnect at any time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── Privacy ───────── -->
+<section class="privacy" id="privacy" aria-labelledby="privacy-h">
+  <div class="wrap">
+    <div class="privacy__head">
+      <img class="privacy__art reveal" src="assets/art-privacy.webp" loading="lazy" decoding="async" width="512" height="512" alt="">
+      <h2 id="privacy-h" class="reveal">Your chart lives on your phone.</h2>
+      <p class="lead reveal">Ovora records intimate information, so the rules are simple and written down.</p>
+    </div>
+    <dl class="facts">
+      <div class="reveal"><dt>No account.</dt><dd>No email, no password, nothing to sign up for. Your chart is yours from the first day.</dd></div>
+      <div class="reveal"><dt>Encrypted before it leaves.</dt><dd>A copy is kept on our server so a partner can connect at any time, but it is encrypted on your phone first, with a key that stays there. If you never pair, nobody can read it, us included.</dd></div>
+      <div class="reveal"><dt>Not for sale.</dt><dd>No advertising, no data brokers, no cross-app tracking.</dd></div>
+      <div class="reveal"><dt>Delete everything, in one step.</dt><dd>Removes the copy on your phone, the encrypted copy on the server, and the anonymous identifier it was filed under.</dd></div>
+    </dl>
+    <p class="links reveal"><a class="more" href="privacy.html">Read the Privacy Policy <span aria-hidden="true">›</span></a> <a class="more" href="terms.html">Terms of Use <span aria-hidden="true">›</span></a></p>
+  </div>
+</section>
+
+<!-- ───────── Plus ───────── -->
+<section class="plus" id="plus" aria-labelledby="plus-h">
+  <div class="wrap wrap--text">
+    <h2 id="plus-h" class="reveal">Daily charting is free.</h2>
+    <p class="lead reveal">Ovora Plus adds more, when you want it.</p>
+  </div>
+  <div class="wrap">
+    <div class="plans reveal">
+      <div class="plan">
+        <h3>Free</h3>
+        <ul>
+          <li>Daily charting and your chart</li>
+          <li>The Today ring and the calendar of rings</li>
+          <li>Period and fertile-window forecasts</li>
+          <li>Lessons, reads and quizzes</li>
+          <li>Countdown alerts and a home-screen widget</li>
+          <li>Password-protected backup and restore</li>
+        </ul>
+      </div>
+      <div class="plan plan--plus">
+        <h3>Ovora Plus</h3>
+        <ul>
+          <li>Unlimited Ovo questions</li>
+          <li>Your full history</li>
+          <li>Longer forecasts</li>
+          <li>Partner invites</li>
+          <li>Animated guidance</li>
+          <li>Switching between marking styles</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note note--center reveal">Monthly or yearly. Your store shows the price in your currency, and any free trial, before you buy. Cancel any time in your store account. <a href="terms.html#plus">Subscription terms <span aria-hidden="true">›</span></a></p>
+  </div>
+</section>
+
+<!-- ───────── Download ───────── -->
+<section class="download" id="download" aria-labelledby="download-h">
+  <div class="wrap band reveal">
+    <img class="band__icon" src="assets/app-icon-192.png" width="72" height="72" alt="">
+    <div class="band__text">
+      <h2 id="download-h">Ovora: Period &amp; Ovulation</h2>
+      <p>Free on Google Play. Coming soon to the App Store.<br>In English, French, Spanish, Italian, Portuguese and German.</p>
+    </div>
+    <div class="band__cta">
+      <a class="btn btn--store" href="https://play.google.com/store/apps/details?id=com.delightfulapps.ovora">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M3.6 2.3 13 12l-9.4 9.7a1.6 1.6 0 0 1-.6-1.3V3.6c0-.5.2-1 .6-1.3Zm11 8.1L5.9 1.6l10.4 6-1.7 2.8Zm3.3 3.6-1.9-2 1.9-2 3.3 1.9c.6.4.6 1.1 0 1.5l-3.3 1.9v-1.3Zm-3.3-.4 1.7 2.8-10.4 6L14.6 13.6Z"/></svg>
+        <span><small>Get it on</small>Google Play</span>
+      </a>
+      <span class="btn btn--soon" aria-label="Coming soon to the App Store">
+        <svg aria-hidden="true" viewBox="0 0 14 44" width="13" height="26"><path fill="currentColor" d="M13.0729 17.6825c.0392 3.4062 2.9006 4.5394 2.9006 4.5394s-1.9468 5.5534-4.5759 5.5534c-1.2046 0-2.1407-.8112-3.4123-.8112-1.2953 0-2.5273.8355-3.4115.8355C2.0882 27.7596 0 22.4097 0 17.5875 0 12.8477 2.8497 10.3672 5.5508 10.3672c1.2421 0 2.2758.8125 3.0621.8125.7504 0 1.9232-.8605 3.4125-.8605 1.3286 0 3.2793.8091 4.0475 2.9633zm-2.0842-5.3264c.9604-1.2145 1.6029-2.9112 1.4295-4.6082-1.5116.0845-3.3272 1.0604-4.3105 2.2758-.9487 1.1108-1.7516 2.8381-1.5389 4.5001 1.6678.1286 3.3797-.9014 4.4199-2.1677z"/></svg>
+        <span><small>Coming soon to the</small>App Store</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────── Footer ───────── -->
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div class="foot__brand">
+      <img src="assets/mark-256.png" width="36" height="36" alt="">
+      <p>Ovora<br><span>by Delightful Apps</span></p>
+    </div>
+    <nav class="foot__col" aria-label="Ovora">
+      <h3>Ovora</h3>
+      <a href="#inside">What's inside</a>
+      <a href="#ovo">Ovo, the coach</a>
+      <a href="#pregnancy">Pregnancy mode</a>
+      <a href="#partner">Partner view</a>
+      <a href="#plus">Ovora Plus</a>
+    </nav>
+    <nav class="foot__col" aria-label="Legal">
+      <h3>Legal</h3>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </nav>
+    <nav class="foot__col" aria-label="Help">
+      <h3>Help</h3>
+      <a href="support.html">Support</a>
+      <a href="mailto:hi@ovora.help">hi@ovora.help</a>
+    </nav>
+  </div>
+  <div class="wrap foot__legal">
+    <p>Ovora is not a contraceptive and does not provide medical advice, diagnosis or treatment. Estimates and AI responses should not replace advice from a qualified healthcare professional.</p>
+    <p>© 2026 Delightful Apps. Google Play is a trademark of Google LLC. App Store is a trademark of Apple Inc.</p>
+  </div>
+</footer>
+
+<script src="home.js" defer></script>
 </body>
 </html>

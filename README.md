@@ -11,7 +11,7 @@ reachable privacy policy URL and reviewers click it.
 - `privacy.html` — Privacy Policy
 - `terms.html` — Terms of Use, including section 9, the Apple App Store terms Apple requires of a custom EULA
 - `support.html` — technical help and public support contact
-- `index.html` — legal and support home
+- `index.html` — the Ovora product page (with `home.css`, `home.js` and `assets/`); it links to the three pages above
 - `.nojekyll` — serve the files as-is, no Jekyll build
 - `favicon.png` and `apple-touch-icon.png` — existing Ovora rose mark, sized for browsers and saved home-screen links
 
@@ -25,7 +25,7 @@ The published pages once carried pink placeholder boxes. Both are now filled in:
 
 ## Store and app URLs
 
-- Legal home: https://ovora.help/
+- Home (product page): https://ovora.help/
 - Privacy: https://ovora.help/privacy.html
 - Terms: https://ovora.help/terms.html
 - Support: https://ovora.help/support.html
