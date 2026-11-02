@@ -66,7 +66,7 @@
       </span>
     </div>
   </div>
-  <div class="hero__art" data-parallax="-0.07">
+  <div class="hero__art" data-hero-art>
     <div class="hero__stage">
       <figure class="device device--back">
         <img src="assets/dark-720.webp" width="720" height="1564" alt="Ovora's Today screen in dark mode: the cycle ring with cycle day 14 at its centre.">
@@ -81,7 +81,7 @@
 <!-- ───────── What's inside (bento) ───────── -->
 <section class="inside" id="inside" aria-labelledby="inside-h">
   <div class="wrap">
-    <h2 id="inside-h" class="reveal">What's inside</h2>
+    <h2 id="inside-h" class="reveal reveal--wipe"><span>What's inside</span></h2>
     <div class="bento">
       <article class="cell cell--ring reveal">
         <div class="cell__text"><h3>Your cycle in one ring.</h3><p>Today shows your cycle day at the centre, with six living roses in the stage you charted that day.</p></div>
@@ -111,22 +111,39 @@
   </div>
 </section>
 
-<!-- ───────── Chapter: Today ───────── -->
+<!-- ───────── Chapter: Today (pinned scene) ───────── -->
 <section class="chapter chapter--today" aria-labelledby="today-h">
   <div class="wrap wrap--text">
-    <h2 id="today-h" class="reveal">Read your body, not a calendar.</h2>
+    <h2 id="today-h" class="reveal reveal--wipe"><span>Read your body, not a calendar.</span></h2>
     <p class="lead reveal">Instead of guessing from dates, Ovora reads your body's own fertility signs. Irregular cycles, breastfeeding and perimenopause don't break it.</p>
-    <p class="lead reveal">Guidance follows your goal: trying to conceive, natural family planning, just tracking your period, or perimenopause.</p>
   </div>
-  <figure class="device device--xl reveal" data-parallax="-0.05">
-    <img src="assets/today-1080.webp" loading="lazy" decoding="async" width="1080" height="2347" alt="The Today screen at full size: cycle day 14 in the ring, a typical cycle of about 28 days, and today's Catch-up.">
-  </figure>
+  <div class="wrap pin">
+    <div class="pin__media">
+      <figure class="device device--pin">
+        <img src="assets/today-1080.webp" loading="lazy" decoding="async" width="1080" height="2347" alt="The Today screen at full size: cycle day 14 in the ring, six roses around it, a typical cycle of about 28 days, and today's Catch-up.">
+      </figure>
+    </div>
+    <ol class="pin__beats">
+      <li class="beat is-active">
+        <h3>One ring, your whole cycle.</h3>
+        <p>Your cycle day sits at the centre, with your typical cycle length beneath it. Tap a day in the strip to look back, or the centre for the day's details.</p>
+      </li>
+      <li class="beat">
+        <h3>Six living roses.</h3>
+        <p>Each rose shows the stage you charted that day: blooms where you were fertile, resting roses as the cycle winds down, buds for the days ahead. The garden follows your real chart, never a guess.</p>
+      </li>
+      <li class="beat">
+        <h3>Your goal, one step at a time.</h3>
+        <p>Guidance follows your goal: trying to conceive, natural family planning, just tracking your period, or perimenopause. The Catch-up card keeps today's step in front of you.</p>
+      </li>
+    </ol>
+  </div>
 </section>
 
 <!-- ───────── Chapter: Patterns (gallery) ───────── -->
 <section class="chapter chapter--patterns" aria-labelledby="patterns-h">
   <div class="wrap wrap--text">
-    <h2 id="patterns-h" class="reveal">Learn your patterns.</h2>
+    <h2 id="patterns-h" class="reveal reveal--wipe"><span>Learn your patterns.</span></h2>
     <p class="lead reveal">Cycle lengths, Peak history and mood across the cycle. Period forecasts learn from your last cycles, and alerts count down to what's next.</p>
   </div>
   <div class="gallery reveal" role="list" aria-label="Screens of the chart, calendar and insights">
@@ -154,9 +171,10 @@
 <section class="chapter chapter--ovo" id="ovo" aria-labelledby="ovo-h" data-theme-section="dark">
   <div class="wrap split">
     <div class="split__copy">
-      <h2 id="ovo-h" class="reveal">Meet Ovo.</h2>
+      <h2 id="ovo-h" class="reveal reveal--wipe"><span>Meet Ovo.</span></h2>
       <p class="lead reveal">A private coach for the questions you'd rather not ask anyone else. Ovo reads an anonymised summary of your chart, never your name, dates or notes.</p>
       <p class="note reveal">Responses are educational, not medical advice.</p>
+      <p class="more-line reveal"><a class="more" href="privacy.html">How Ovo handles your chart <span aria-hidden="true">›</span></a></p>
     </div>
     <figure class="device device--lg reveal" data-parallax="-0.05">
       <img src="assets/coach-chat-720.webp" loading="lazy" decoding="async" width="720" height="1565" alt="Ovo explaining today's reading on cycle day 14 and why the Peak is likely near, with follow-up questions below.">
@@ -168,9 +186,10 @@
 <section class="chapter chapter--preg" id="pregnancy" aria-labelledby="preg-h" data-theme-section="light">
   <div class="wrap panel">
     <div class="panel__copy">
-      <h2 id="preg-h" class="reveal">When you're pregnant, Ovora changes with you.</h2>
+      <h2 id="preg-h" class="reveal reveal--wipe"><span>When you're pregnant, Ovora changes with you.</span></h2>
       <p class="lead reveal">Your week and day, your baby's size from poppy seed to pumpkin, what's developing, and check-in trends, with reads based on NHS guidance.</p>
       <p class="lead reveal">The estimated due date sits on Today, every week has a short deck of cards, and your cycle history is kept for afterwards.</p>
+      <p class="more-line reveal"><a class="more" href="privacy.html#pregnancy">Pregnancy mode and your data <span aria-hidden="true">›</span></a></p>
     </div>
     <div class="panel__art">
       <figure class="device device--p2 reveal" data-parallax="-0.04">
@@ -190,9 +209,10 @@
       <img src="assets/partner-720.webp" loading="lazy" decoding="async" width="720" height="1564" alt="Connect your partner: a sharing code that stops working after 24 hours, with Copy, Share and Generate new code buttons.">
     </figure>
     <div class="split__copy">
-      <h2 id="partner-h" class="reveal">Connect with care.</h2>
+      <h2 id="partner-h" class="reveal reveal--wipe"><span>Connect with care.</span></h2>
       <p class="lead reveal">Invite your partner with a private code. He sees what matters, in wording written for him, gets his own alerts, and can never edit your chart.</p>
       <p class="note reveal">Pairing is optional, and you can disconnect at any time.</p>
+      <p class="more-line reveal"><a class="more" href="privacy.html#pairing">How pairing protects your chart <span aria-hidden="true">›</span></a></p>
     </div>
   </div>
 </section>
@@ -202,7 +222,7 @@
   <div class="wrap">
     <div class="privacy__head">
       <img class="privacy__art reveal" src="assets/art-privacy.webp" loading="lazy" decoding="async" width="512" height="512" alt="">
-      <h2 id="privacy-h" class="reveal">Your chart lives on your phone.</h2>
+      <h2 id="privacy-h" class="reveal reveal--wipe"><span>Your chart lives on your phone.</span></h2>
       <p class="lead reveal">Ovora records intimate information, so the rules are simple and written down.</p>
     </div>
     <dl class="facts">
@@ -218,7 +238,7 @@
 <!-- ───────── Plus ───────── -->
 <section class="plus" id="plus" aria-labelledby="plus-h">
   <div class="wrap wrap--text">
-    <h2 id="plus-h" class="reveal">Daily charting is free.</h2>
+    <h2 id="plus-h" class="reveal reveal--wipe"><span>Daily charting is free.</span></h2>
     <p class="lead reveal">Ovora Plus adds more, when you want it.</p>
   </div>
   <div class="wrap">
