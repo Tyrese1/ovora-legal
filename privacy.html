@@ -16,7 +16,7 @@
 <header class="site"><a class="home" href="./">Ovora</a></header>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: 24 October 2026</p>
+<p class="updated">Last updated: 2 November 2026</p>
 
 <p class="lede">Ovora is a fertility-awareness app built around the Billings Ovulation Method. It
 records intimate health information, so this page says plainly what is kept, where it goes, and how
@@ -162,6 +162,16 @@ link is removed on both devices and the partner's mirrored copy stops updating.<
 
 <p>Your partner never sees your notes to yourself, and cannot log or change anything on your chart.</p>
 
+<p><strong>Instant updates for a linked partner.</strong> On a partner's phone, Ovora registers a push
+address with Google Firebase Cloud Messaging (and Apple Push Notification service on iPhone) so the
+phone can refresh when your chart changes. The push itself contains no health information, only a
+signal to refresh and the date of the newest entry. The address is removed when the phones are
+unlinked or the data is deleted. Nothing is sent unless you turn on <em>Let him know when I log a
+day</em> (or, in pregnancy, <em>Let him know when I check in</em>). For that, your phone stores your
+yes/no answers and, for check-ins, only the date you last checked in (never what you wrote or how
+you felt) so our server can tell whether to send the signal. Turning a switch off stops it from
+your next entry.</p>
+
 <h2 id="pregnancy">Optional pregnancy tracking</h2>
 
 <p>When you explicitly start pregnancy tracking, Ovora stores your entered dating information,
@@ -251,6 +261,16 @@ or add it to your app chart, Coach, analytics or partner data. These services pr
 under their own policies: <a href="https://resend.com/legal/privacy-policy">Resend</a>,
 <a href="https://vercel.com/legal/privacy-policy">Vercel</a> and
 <a href="https://policies.google.com/privacy">Google</a>.</p>
+
+<h2 id="feedback">Feedback you choose to send</h2>
+<p>If you use <em>Send feedback</em> (or answer "Not really" to "Enjoying Ovora?"), we receive the
+message you write and the time it arrived, linked to your app's anonymous account ID. If you leave
+"Include app version and device" ticked, we also receive the app version, your phone's platform and
+system version, and the app language. If you give an email address, we use it only to reply to
+you. Feedback never includes your chart or your name. We use it to answer you and to improve Ovora;
+we do not use it for advertising or tracking, and we do not sell it. It is stored in our Firebase
+(Google Cloud) database and may be forwarded to our support inbox. Write to
+<strong>hi@ovora.help</strong> to have your feedback deleted.</p>
 
 <h2>Who else is involved</h2>
 
