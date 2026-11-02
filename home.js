@@ -7,6 +7,21 @@
   var doc = document.documentElement;
   var hasIO = 'IntersectionObserver' in window;
 
+  /* Android visitors get a bar for the Play app. Closing it keeps it away for two weeks;
+     it never shows inside an app's web view or the installed web app. iPhones wait for the App Store. */
+  var appBar = document.getElementById('appBar'), BAR_KEY = 'ovora-app-bar-closed', barClosedAt = 0;
+  try { barClosedAt = +localStorage.getItem(BAR_KEY) || 0; } catch (e) {}
+  if (appBar && /Android/i.test(navigator.userAgent) && !/; wv\)/.test(navigator.userAgent) &&
+      !window.matchMedia('(display-mode: standalone)').matches && Date.now() - barClosedAt > 12096e5) {
+    appBar.hidden = false;
+    document.body.style.paddingBottom = appBar.offsetHeight + 'px';
+    appBar.querySelector('.app-bar__x').addEventListener('click', function () {
+      appBar.hidden = true;
+      document.body.style.paddingBottom = '';
+      try { localStorage.setItem(BAR_KEY, String(Date.now())); } catch (e) {}
+    });
+  }
+
   /* Nav: transparent at the top, frosted once the sentinel leaves the viewport. */
   var nav = document.getElementById('nav');
   var sentinel = document.querySelector('.nav-sentinel');
